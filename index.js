@@ -6,6 +6,9 @@ const port = 3000;
 const user = require('./routes/user.route');
 // const product = require('./routes/products.route');
 
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 require('dotenv').config();
 
 mongoose.connect(process.env.MONGODB_URI)
