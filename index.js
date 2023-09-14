@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGODB_URI)
     );
 
 app.use('/api/users', user);
-app.use('/api/product', product);
+// app.use('/api/product', product);
 
 app.listen(port, () => {
     console.log('Listening on port 3000');
