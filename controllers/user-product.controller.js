@@ -81,16 +81,16 @@ exports.updateProduct = async(req, res) => {
     
 exports.deleteProduct = async(req, res) => {
     const username = req.params.username;
-    const product_name = req.params.product;
+    const product = req.params.product;
     
     console.log("Delete product for username " + username);
 
     try{
         const results = await User.updateOne(
-            {username: username, "products.product": product_name},
+            {username: username},
             {                
                 $pull: {
-                    products: product
+                    products: { product: product }
                 }
             }
         );
